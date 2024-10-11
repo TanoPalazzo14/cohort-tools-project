@@ -1,6 +1,6 @@
 const PORT = 5010;
 
-
+require("dotenv").config();
 require("./db")
 const express = require("express");
 const app = express();
