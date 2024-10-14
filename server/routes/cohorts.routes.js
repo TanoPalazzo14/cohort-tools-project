@@ -5,7 +5,7 @@ const Cohort = require("../models/Cohort.model")
 router.post("/", async (req, res,next)=>{
   try {
 
-    await Cohort.create({
+    const response = await Cohort.create({
       campus: req.body.campus,
       cohortName: req.body.cohortName,
       cohortSlug: req.body.cohortSlug,
@@ -17,11 +17,11 @@ router.post("/", async (req, res,next)=>{
       programManager: req.body.programManager,
       startDate: req.body.startDate,
       totalHours: req.body.totalHours
-      
     })
-    res.status(201).json({message:"Cohort created successfully"})
+    console.log("PASAMOS POR AQUI",response)
+    res.status(201).json({data:response})
   } catch (error) {
-    console.log(error)
+    console.log("estamos en el catch",error)
     next(error)
   }
 })

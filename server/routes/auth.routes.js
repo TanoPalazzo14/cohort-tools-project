@@ -56,6 +56,7 @@ router.post("/signup", async(req,res, next)=>{
       res.sendStatus(201)
     
   } catch (error) {
+    console.log("holis",error)
     next(error)
   }
 })
